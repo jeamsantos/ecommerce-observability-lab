@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: Mini Order API
+    orgId: 1
+    folder: Observability Studies
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

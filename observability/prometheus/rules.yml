@@ -1,0 +1,45 @@
+groups:
+  - name: ecommerce-lab
+    rules:
+      - alert: EcommerceApiDown
+        expr: up{job="ecommerce-api"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: Ecommerce API is down
+          description: Prometheus cannot scrape the ecommerce API target.
+
+      - alert: EcommerceHighErrorRate
+        expr: |
+          sum(rate(ecommerce_http_requests_total{status_code=~"4..|5.."}[5m]))
+          /
+          sum(rate(ecommerce_http_requests_total[5m])) > 0.20
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: High HTTP error rate
+          description: More than 20 percent of HTTP requests are failing.
+
+      - alert: EcommerceHighLatencyP95
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum(rate(ecommerce_http_request_duration_seconds_bucket[5m])) by (le)
+          ) > 1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: High p95 latency
+          description: The API p95 latency is above 1 second.
+
+      - alert: EcommercePaymentFailures
+        expr: increase(ecommerce_payments_total{status="failed"}[5m]) > 5
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: Payment failures increased
+          description: More than five payment failures happened in the last five minutes.

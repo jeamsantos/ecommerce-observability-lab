@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+prometheus_data/
+grafana_data/
+loki_data/
+
+# Other local studies in the same workspace
+introducao-loki/
+climate-monitor-hub/
+automacao-vagas/
+100_queries_join_pratica.sql
+joins_entrevista_pratica.sql
+joins_pratica.sql
