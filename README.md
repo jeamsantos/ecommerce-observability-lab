@@ -277,6 +277,14 @@ Ao usar o projeto, estes sao os prints que fazem sentido para documentar seu por
      ```
    - Esperado: fluxo completo da requisicao.
 
+## Evidencias Visuais
+
+### Grafana Loki Logs Drilldown
+
+![Grafana Loki Logs Drilldown](docs/images/grafana-loki-logs-drilldown.png)
+
+Esta tela demonstra que o Grafana esta conectado ao Loki e consegue agrupar logs por labels como `service`. No exemplo, aparecem logs da API `ecommerce-api`, incluindo eventos em JSON com niveis `INFO` e `WARNING`, o que permite investigar falhas de pagamento, erros HTTP e fluxos especificos por `request_id`.
+
 ## Simular Trafego
 
 Gerar pedidos e pagamentos continuamente:
