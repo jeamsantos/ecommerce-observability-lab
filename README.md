@@ -279,6 +279,12 @@ Ao usar o projeto, estes sao os prints que fazem sentido para documentar seu por
 
 ## Evidencias Visuais
 
+### Grafana Mini Order API Dashboard
+
+![Grafana Mini Order API Dashboard](docs/images/grafana-mini-order-dashboard.png)
+
+Esta tela mostra o dashboard principal do laboratorio com indicadores de requests por segundo, taxa de erro, latencia p95, pedidos ativos, trafego por rota, pedidos por status, latencia de pagamento e pagamentos aprovados/falhos. Ela e a principal evidencia visual de que a API esta emitindo metricas de negocio e de plataforma para o Prometheus e que o Grafana consegue transformar esses dados em uma visao operacional.
+
 ### Grafana Loki Logs Drilldown
 
 ![Grafana Loki Logs Drilldown](docs/images/grafana-loki-logs-drilldown.png)
