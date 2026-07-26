@@ -285,6 +285,12 @@ Ao usar o projeto, estes sao os prints que fazem sentido para documentar seu por
 
 Esta tela demonstra que o Grafana esta conectado ao Loki e consegue agrupar logs por labels como `service`. No exemplo, aparecem logs da API `ecommerce-api`, incluindo eventos em JSON com niveis `INFO` e `WARNING`, o que permite investigar falhas de pagamento, erros HTTP e fluxos especificos por `request_id`.
 
+### Grafana Prometheus Metrics Explore
+
+![Grafana Prometheus Metrics Explore](docs/images/grafana-prometheus-metrics-explore.png)
+
+Esta tela demonstra o lado de metricas do laboratorio. O Grafana esta usando o datasource `Prometheus` e lista series como `active_orders`, `ALERTS` e metricas internas do Alloy. Isso evidencia que a stack coleta metricas da aplicacao e dos componentes de observabilidade, permitindo correlacionar graficos de saude com logs no Loki.
+
 ## Simular Trafego
 
 Gerar pedidos e pagamentos continuamente:
